@@ -1,0 +1,16 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    var dict = {};
+    for (var i in nums){
+        var complement = target - nums[i];
+        if(dict[complement]!=undefined){
+            return [i,dict[complement]];
+        }
+        dict[nums[i]] = i;
+    }
+    return [0];
+};
